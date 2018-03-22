@@ -1,0 +1,14 @@
+{
+  "name": "fortniteapi_wrapper",
+  "version": "1.0.0",
+  "description": "",
+  "main": "tests.js",
+  "scripts": {
+    "test": "node tests.js"
+  },
+  "author": "Dylan Ogle",
+  "license": "MIT",
+  "dependencies": {
+    "request": "^2.85.0"
+  }
+}

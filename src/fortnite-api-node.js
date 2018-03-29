@@ -8,13 +8,7 @@ function FortniteAPI(options){
 }
 
 FortniteAPI.prototype.getLifetimeKills = function(epic_nickname){
-    var full_url = this.url + epic_nickname;
-    var options = {
-        url: full_url,
-        headers: {
-            'TRN-Api-Key':this.api_key
-        }
-    };
+    var options = this.getOptions(epic_nickname);
     return new Promise(function(resolve,reject){
         req(options,function(err,res,body){
             if(!err && res.statusCode == 200){
@@ -26,22 +20,36 @@ FortniteAPI.prototype.getLifetimeKills = function(epic_nickname){
     })
 }
 
+/**
+ * 
+ * @param {*} epic_nickname 
+ * @param {*} playlist  Playlist to search through, valid options are ('p2' - SOLO, 'p10' - DUO, 'p9' - SQUAD)
+ *                      there are also 'curr_' versions of each playlist option to only grab data from the 
+ *                      most recent season. For combined stats check Lifetime version of function
+ */
 FortniteAPI.prototype.getKills = function(epic_nickname,playlist){
-    var full_url = this.url + epic_nickname;
-    var options = {
-        url: full_url,
-        headers: {
-            'TRN-Api-Key':this.api_key
-        }
-    };
+    var options = this.getOptions(epic_nickname);
     return new Promise(function(resolve,reject){
         req(options,function(err,res,body){
             if(!err && res.statusCode == 200){
                 var data = JSON.parse(body);
-                resolve(data.stats[playlist].kills)
+                resolve(data.stats[playlist].kills.value);
             }
         })
     });
 }
 
 module.exports = FortniteAPI;
+
+/**
+ * Helper function to reduce boilerplate
+ */
+FortniteAPI.prototype.getOptions = function(epic_nickname){
+    var options = {
+        url: this.url + epic_nickname,
+        headers: {
+            'TRN-Api-Key':this.api_key
+        }
+    };
+    return options;
+}

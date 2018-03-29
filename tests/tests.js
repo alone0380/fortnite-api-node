@@ -1,5 +1,5 @@
-var FortniteAPI = require('./FortniteAPI');
-var auth = require('./auth');
+var FortniteAPI = require('../src/fortnite-api-node')
+var auth = require('../auth');
 
 var options = {
     api_key: auth.token,
@@ -8,8 +8,12 @@ var options = {
 
 var fortnite = new FortniteAPI(options);
 
-fortnite.getKills('Deogle')
+fortnite.getLifetimeKills('Deogle')
 .then(function(result){
-    console.log("Deogle has " + result + " kills");
+    console.log(result);
 })
 
+fortnite.getKills('Deogle','p2')
+.then(function(result){
+    console.log(result);
+})

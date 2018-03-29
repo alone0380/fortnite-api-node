@@ -2,11 +2,17 @@
   "name": "fortnite-api-node",
   "version": "1.0.0",
   "description": "",
-  "main": "tests.js",
+  "main": "f.js",
   "scripts": {
-    "test": "node tests.js"
+    "test": "node tests/tests.js"
   },
-  "author": "Dylan Ogle",
+  "keywords": [
+    "api",
+    "fortnite",
+    "nodejs",
+    "javascript"
+],
+  "author": "Deogle",
   "license": "MIT",
   "dependencies": {
     "request": "^2.85.0"

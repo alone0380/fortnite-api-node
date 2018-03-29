@@ -1,5 +1,5 @@
 # Fortnite API
-A node.js wrapper for the Fornite Tracker API
+A node.js wrapper for the https://fortnitetracker.com/ api. All credit goes to them for providing such a fully featured api.
 
 ## Usage
 
@@ -9,5 +9,5 @@ A node.js wrapper for the Fornite Tracker API
 ## API
 
 ### `new FortniteAPI({api_key},{pc,xbl,psn})`
-Constructor. Use the provided api key and one of the valid platforms. Uses FortniteTracker API version 1
+Constructor. Use the api key provided at https://fortnitetracker.com/site-api and one of the valid platforms. Uses FortniteTracker API version 1
 

@@ -1,7 +1,8 @@
 var FortniteAPI = require('./FortniteAPI');
+var auth = require('./auth');
 
 var options = {
-    api_key: "MUH API KEY",
+    api_key: auth.token,
     platform: "pc" //all other platforms are inferior
 }
 

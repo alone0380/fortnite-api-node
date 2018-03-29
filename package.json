@@ -2,9 +2,13 @@
   "name": "fortnite-api-node",
   "version": "1.0.0",
   "description": "",
-  "main": "f.js",
+  "main": "index.js",
   "scripts": {
     "test": "node tests/tests.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/Deogle/fortnite-api-node.git"
   },
   "keywords": [
     "api",

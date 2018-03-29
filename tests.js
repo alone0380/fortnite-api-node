@@ -1,7 +1,11 @@
-var ForniteAPI = require('./FortniteAPI');
-var fortnite = new ForniteAPI(/*someApiKey*/,/*platform pc,xbl,psn*/);
+var FortniteAPI = require('./FortniteAPI');
 
+var options = {
+    api_key: "MUH API KEY",
+    platform: "pc" //all other platforms are inferior
+}
 
+var fortnite = new FortniteAPI(options);
 
 fortnite.getKills('Deogle')
 .then(function(result){

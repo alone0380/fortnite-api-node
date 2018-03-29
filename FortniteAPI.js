@@ -1,9 +1,9 @@
 var req = require('request');
 var base_url = "https://api.fortnitetracker.com/v1/profile"
 
-function FortniteAPI(api_key,platform){
-    this.api_key = api_key;
-    this.platform = platform;
+function FortniteAPI(options){
+    this.api_key = options.api_key;
+    this.platform = options.platform;
 }
 
 FortniteAPI.prototype.getKills = function(epic_nickname){

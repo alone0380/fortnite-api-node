@@ -44,7 +44,7 @@ FortniteAPI.prototype.getData = function(epic_nickname){
     return new Promise(function(resolve,reject){
         req(options,function(err,res,body){
             if(!err && res.statusCode == 200){
-                resolve(data);
+                resolve(JSON.parse(body));
             }
         })
     })

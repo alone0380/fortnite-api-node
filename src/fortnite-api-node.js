@@ -42,9 +42,11 @@ FortniteAPI.prototype.getKills = function(epic_nickname,playlist){
 FortniteAPI.prototype.getData = function(epic_nickname){
     var options = this.getOptions(epic_nickname);
     return new Promise(function(resolve,reject){
-        if(!err && res.statusCode == 200){
-            resolve(data);
-        }
+        req(options,function(err,res,body){
+            if(!err && res.statusCode == 200){
+                resolve(data);
+            }
+        })
     })
 }
 

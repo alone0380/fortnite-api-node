@@ -8,22 +8,14 @@ var options = {
 
 var fortnite = new FortniteAPI(options);
 
-fortnite.getLifetimeKills('Deogle')
+var example_name = /*some epic nickname*/
+
+fortnite.getData(example_name)
 .then(function(result){
     console.log(result);
 })
 
-fortnite.getKills('Deogle','p2')
-.then(function(result){
-    console.log(result);
-})
-
-fortnite.getData('Deogle')
-.then(function(result){
-    console.log(result);
-})
-
-var players = ['Deogle','fake'];
+var players = /*some array of nicknames*/
 
 fortnite.getPlayers(players)
 .then(function(result){

@@ -17,3 +17,15 @@ fortnite.getKills('Deogle','p2')
 .then(function(result){
     console.log(result);
 })
+
+fortnite.getData('Deogle')
+.then(function(result){
+    console.log(result);
+})
+
+var players = ['Deogle','fake'];
+
+fortnite.getPlayers(players)
+.then(function(result){
+    console.log(result);
+})
